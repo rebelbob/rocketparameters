@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Class-Path: logback-core-1.2.3.jar jstl-1.2.jar jcl-over-slf4j-1.7.28.
+ jar logback-classic-1.2.3.jar slf4j-api-1.7.28.jar
+Main-Class: 
+
