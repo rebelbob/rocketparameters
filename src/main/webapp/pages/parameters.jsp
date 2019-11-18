@@ -20,8 +20,13 @@
                         },
                         function(data,status){
                           var list = data.split(',');
-                          $("#x1").text(list[0]);
-                          $("#x2").text(list[1]);
+                          $("#mb1").text(list[0]);
+                          $("#mb2").text(list[1]);
+                          $("#mt1").text(list[2]);
+                          $("#mt2").text(list[3]);
+                          $("#mk1").text(list[4]);
+                          $("#mk2").text(list[5]);
+                          $("#m0").text(list[6]);
                         });
                       });
                     });
@@ -60,16 +65,16 @@
                         <tr>
                             <td>Масса полезной нагрузки, т</td>
                             <td id="column"><input type="text" id="mp"></td>
-                            <td>Характеристическая скорость РН, м/с</td>
-                            <td id="column"><input type="text" id="Vx"></td>
                             <td>Конструктивная характеристика ракетных блоков первой ступени, s1</td>
                             <td id="column"><input type="text" id="s1"></td>
-                        </tr>
-                        <tr>
-                            <td>Конструктивная характеристика ракетных блоков второй ступени, s2</td>
-                            <td id="column"><input type="text" id="s2"></td>
                             <td>Удельный импульс топлива и двигателя РБ первой ступени, м/с</td>
                             <td id="column"><input type="text" id="w1"></td>
+                        </tr>
+                        <tr>
+                            <td>Характеристическая скорость РН, м/с</td>
+                            <td id="column"><input type="text" id="Vx"></td>
+                            <td>Конструктивная характеристика ракетных блоков второй ступени, s2</td>
+                            <td id="column"><input type="text" id="s2"></td>
                             <td>Удельный импульс топлива и двигателя РБ второй ступени, м/с</td>
                             <td id="column"><input type="text" id="w2"></td>
                         </tr>
@@ -81,19 +86,23 @@
                         <table>
                             <tr>
                                 <td>Масса РБ первой ступени, т</td>
-                                <td id="column"><div id="x1"></div></td>
-                                <td>Масса РБ второй ступени, м/с</td>
-                                <td id="column"><div id="x2"></div></td>
+                                <td id="column"><div id="mb1"></div></td>
                                 <td>Масса топлива РБ первой ступени, т</td>
-                                <td id="column"><input type="text"></td>
+                                <td id="column"><div id="mt1"></div></td>
+                                <td>Масса конструкции РБ первой ступени, т</td>
+                                <td id="column"><div id="mk1"></div></td>
                             </tr>
                             <tr>
+                                <td>Масса РБ второй ступени, м/с</td>
+                                <td id="column"><div id="mb2"></div></td>
                                 <td>Масса топлива РБ второй ступени, т</td>
-                                <td id="column"><input type="text"></td>
-                                <td>Масса конструкции РБ первой ступени, т</td>
-                                <td id="column"><input type="text"></td>
+                                <td id="column"><div id="mt2"></div></td>
                                 <td>Масса конструкции РБ второй ступени, т</td>
-                                <td id="column"><input type="text"></td>
+                                <td id="column"><div id="mk2"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Стартовая масса РН, т</td>
+                                <td id="column"><div id="m0"></div></td>
                             </tr>
                         </table>
                         <br>

@@ -1,5 +1,6 @@
 package ru.aerocos.rocketparam.repository;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Parameters {
@@ -165,6 +166,12 @@ public class Parameters {
     }
 
     public String massToStr(){
-        return mb.get(0) + "," + mb.get(1) + "," + mt.get(0) + "," + mt.get(1) + "," + mk.get(0) + "," + mk.get(1);
+        return new DecimalFormat("#0.00").format(mb.get(0)) + "," +
+                new DecimalFormat("#0.00").format(mb.get(1)) + "," +
+                new DecimalFormat("#0.00").format(mt.get(0)) + "," +
+                new DecimalFormat("#0.00").format(mt.get(1)) + "," +
+                new DecimalFormat("#0.00").format(mk.get(0)) + "," +
+                new DecimalFormat("#0.00").format(mk.get(1)) + "," +
+                new DecimalFormat("#0.00").format(m0);
     }
 }
