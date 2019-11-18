@@ -1,6 +1,8 @@
 package ru.aerocos.rocketparam.web;
 
+import ru.aerocos.rocketparam.model.Mass;
 import ru.aerocos.rocketparam.model.Posledovatelnoe;
+import ru.aerocos.rocketparam.repository.Parameters;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,12 +22,17 @@ public class ParametersServlet extends HttpServlet {
 //        String name = request.getParameter("name");
 //        response.getWriter().print("Hello "+ name + "!!");
 
-            Posledovatelnoe posledovatelnoe = new Posledovatelnoe(Double.parseDouble(request.getParameter("Vx")),
-                    Double.parseDouble(request.getParameter("s1")), Double.parseDouble(request.getParameter("s2")),
-                    Double.parseDouble(request.getParameter("w1")), Double.parseDouble(request.getParameter("w2")));
-            posledovatelnoe.compute();
+        Parameters rep = new Parameters();
+        rep.setVx(Double.parseDouble(request.getParameter("Vx"))).
+                setS(Double.parseDouble(request.getParameter("s1")), Double.parseDouble(request.getParameter("s2"))).
+                setW(Double.parseDouble(request.getParameter("w1")), Double.parseDouble(request.getParameter("w2"))).
+                setZ(1.1, 1.1).
+                setMp(Double.parseDouble(request.getParameter("mp"))).
+                computeZX();
+
+        rep = Mass.compute(rep);
 
 
-        response.getWriter().print(posledovatelnoe.getX1() + "," + posledovatelnoe.getX2());
+        response.getWriter().print(rep.massToStr());
     }
 }
