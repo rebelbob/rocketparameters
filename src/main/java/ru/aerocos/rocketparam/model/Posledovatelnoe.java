@@ -30,6 +30,8 @@ public class Posledovatelnoe {
     }
 
     public double compute(){
+        pickZ12();
+        pickX12();
         double m = Math.log((1 + s1/(s1 - 1) * x1) / (1 + s1/(s1 - 1) * x1 - x1));
         double n = Math.log((1 + s1/(s1 - 1) * x1 + s2/(s2 - 1) * x2) / (1 + s1/(s1 - 1) * x1 - x2 + s2/(s2 - 1) * x2 - x2));
         System.out.println(m + " " + n);

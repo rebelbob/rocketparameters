@@ -1,1 +1,5 @@
+ru/aerocos/rocketparam/Main.class
 ru/aerocos/rocketparam/web/ParametersServlet.class
+ru/aerocos/rocketparam/model/ComputeMass.class
+ru/aerocos/rocketparam/model/Posledovatelnoe.class
+ru/aerocos/rocketparam/web/Servlet.class

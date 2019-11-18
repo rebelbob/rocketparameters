@@ -4,28 +4,8 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="css/style.css">
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script src="js/myjs.js"></script>
-                <script>
-                    $(document).ready(function(){
-                      $(".compute").click(function(){
-                        $.post("/rocket/parameters",
-                        {
-                          Vx: $("#Vx").val(),
-                          mp: $("#mp").val(),
-                          s1: $("#s1").val(),
-                          s2: $("#s2").val(),
-                          w1: $("#w1").val(),
-                          w2: $("#w2").val()
-                        },
-                        function(data,status){
-                          var list = data.split(',');
-                          $("#x1").text(list[0]);
-                          $("#x2").text(list[1]);
-                        });
-                      });
-                    });
-                </script>
     <title>График</title>
 </head>
 <body>
@@ -81,9 +61,9 @@
                         <table>
                             <tr>
                                 <td>Масса РБ первой ступени, т</td>
-                                <td id="column"><div id="x1"></div></td>
+                                <td id="column"></td>
                                 <td>Масса РБ второй ступени, м/с</td>
-                                <td id="column"><div id="x2"></div></td>
+                                <td id="column"><div id="bly"></div></td>
                                 <td>Масса топлива РБ первой ступени, т</td>
                                 <td id="column"><input type="text"></td>
                             </tr>

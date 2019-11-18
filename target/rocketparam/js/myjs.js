@@ -28,3 +28,20 @@ $(document).ready(function(){
     }
 });
 
+$(document).ready(function(){
+    $(".compute").click(function(){
+        $.post("/rocket/parameters",
+            {
+                Vx: $("#Vx").val(),
+                mp: $("#mp").val(),
+                s1: $("#s1").val(),
+                s2: $("#s2").val(),
+                w1: $("#w1").val(),
+                w2: $("#w2").val()
+            },
+       function(data){
+
+            $("#bly").text(data);
+       });
+    });
+});
