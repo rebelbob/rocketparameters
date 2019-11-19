@@ -8,14 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e1768901-ae7a-4c51-91eb-06b63893ca23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/repository/Parameters.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/repository/Parameters.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/model/Posledovatelnoe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/model/Posledovatelnoe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/web/ParametersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/web/ParametersServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/parameters.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/parameters.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestZ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestZ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/aerocos/rocketparam/model/Mass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/aerocos/rocketparam/model/Mass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/aerocos/rocketparam/repository/Parameters.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/aerocos/rocketparam/repository/Parameters.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ru/aerocos/rocketparam/web/ParametersServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/aerocos/rocketparam/web/ParametersServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestZ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestZ.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rocket/org/apache/jsp/pages/parameters_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rocket/org/apache/jsp/pages/parameters_jsp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rocket/org/apache/jsp/pages/parameters_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rocket/org/apache/jsp/pages/parameters_jsp.java" afterDir="false" />
     </list>
@@ -141,7 +137,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

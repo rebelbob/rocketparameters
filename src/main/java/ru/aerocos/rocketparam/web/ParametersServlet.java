@@ -32,6 +32,8 @@ public class ParametersServlet extends HttpServlet {
 
         rep = Mass.compute(rep);
 
+        System.out.println(request.getParameter("scheme"));
+
 
         response.getWriter().print(rep.massToStr());
     }

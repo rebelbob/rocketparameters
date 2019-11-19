@@ -7,16 +7,20 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/myjs.js"></script>
                 <script>
+                    var choice = "posled";
+
                     $(document).ready(function(){
                       $(".compute").click(function(){
                         $.post("/rocket/parameters",
                         {
+                          scheme : choice,
                           Vx: $("#Vx").val(),
                           mp: $("#mp").val(),
                           s1: $("#s1").val(),
                           s2: $("#s2").val(),
                           w1: $("#w1").val(),
-                          w2: $("#w2").val()
+                          w2: $("#w2").val(),
+                          a: $("#a").val()
                         },
                         function(data,status){
                           var list = data.split(',');
@@ -27,8 +31,24 @@
                           $("#mk1").text(list[4]);
                           $("#mk2").text(list[5]);
                           $("#m0").text(list[6]);
+                          $("#mb3").text(list[7]);
+                          $("#mt3").text(list[8]);
+                          $("#mk3").text(list[9]);
                         });
                       });
+                    });
+
+                    $(document).ready(function(){
+                        $("#choice1").click(function(){
+                            choice = "posled";
+                            $("#aInput").hide();
+                            $("#stup3").hide();
+                        });
+                        $("#choice2").click(function(){
+                            choice = "parallbezpereliva";
+                            $("#aInput").show();
+                            $("#stup3").hide();
+                        });
                     });
                 </script>
     <title>График</title>
@@ -46,13 +66,13 @@
                 <h2>Выбор схемы соединения ракетных блоков</h2>
                 <hr><br>
                 <form>
-                    <input type="radio" id="contactChoice1"
-                        name="contact" value="email" checked>
-                    <label for="contactChoice1">Последовательное</label>
+                    <input type="radio" id="choice1"
+                        name="scheme" value="posled" checked>
+                    <label for="choice1">Последовательное</label>
                     <br>
-                     <input type="radio" id="contactChoice2"
-                        name="contact" value="phone">
-                    <label for="contactChoice2">Параллельное</label>
+                     <input type="radio" id="choice2"
+                        name="scheme" value="parallbezpereliva">
+                    <label for="choice2">Параллельное без перелива</label>
                 </form>
             </div>
 
@@ -78,6 +98,16 @@
                             <td>Удельный импульс топлива и двигателя РБ второй ступени, м/с</td>
                             <td id="column"><input type="text" id="w2"></td>
                         </tr>
+                        <tr id="aInput" hidden="true">
+                            <td>Отношение силы тяги</td>
+                            <td id="column"><input type="text" id="a"></td>
+                        </tr>
+                        <tr id="stup3" hidden="true">
+                            <td>Конструктивная характеристика ракетных блоков третьей ступени, s3</td>
+                            <td id="column"><input type="text" id="s3"></td>
+                            <td>Удельный импульс топлива и двигателя РБ третьей ступени, м/с</td>
+                            <td id="column"><input type="text" id="w3"></td>
+                        </tr>
                     </table>
                 </form>
                 <br><br>
@@ -99,6 +129,14 @@
                                 <td id="column"><div id="mt2"></div></td>
                                 <td>Масса конструкции РБ второй ступени, т</td>
                                 <td id="column"><div id="mk2"></div></td>
+                            </tr>
+                            <tr id="stup3" hidden="true">
+                                <td >Масса РБ третьей ступени, м/с</td>
+                                <td id="column"><div id="mb3"></div></td>
+                                <td>Масса топлива РБ третьей ступени, т</td>
+                                <td id="column"><div id="mt3"></div></td>
+                                <td>Масса конструкции РБ третьей ступени, т</td>
+                                <td id="column"><div id="mk3"></div></td>
                             </tr>
                             <tr>
                                 <td>Стартовая масса РН, т</td>
