@@ -20,7 +20,9 @@
                           s2: $("#s2").val(),
                           w1: $("#w1").val(),
                           w2: $("#w2").val(),
-                          a: $("#a").val()
+                          a: $("#a").val(),
+                          w3: $("#w3").val(),
+                          s3: $("#s3").val()
                         },
                         function(data,status){
                           var list = data.split(',');
@@ -100,13 +102,13 @@
                         </tr>
                         <tr id="aInput" hidden="true">
                             <td>Отношение силы тяги</td>
-                            <td id="column"><input type="text" id="a"></td>
+                            <td id="column"><input type="text" id="a" value="0"></td>
                         </tr>
                         <tr id="stup3" hidden="true">
                             <td>Конструктивная характеристика ракетных блоков третьей ступени, s3</td>
-                            <td id="column"><input type="text" id="s3"></td>
+                            <td id="column"><input type="text" id="s3" value="0"></td>
                             <td>Удельный импульс топлива и двигателя РБ третьей ступени, м/с</td>
-                            <td id="column"><input type="text" id="w3"></td>
+                            <td id="column"><input type="text" id="w3" value="0"></td>
                         </tr>
                     </table>
                 </form>

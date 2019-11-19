@@ -1,9 +1,7 @@
 package ru.aerocos.rocketparam.web;
 
 import ru.aerocos.rocketparam.model.Mass;
-import ru.aerocos.rocketparam.model.Posledovatelnoe;
 import ru.aerocos.rocketparam.repository.Parameters;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,19 +20,21 @@ public class ParametersServlet extends HttpServlet {
 //        String name = request.getParameter("name");
 //        response.getWriter().print("Hello "+ name + "!!");
 
+        String respStr = "";
+
         Parameters rep = new Parameters();
         rep.setVx(Double.parseDouble(request.getParameter("Vx"))).
-                setS(Double.parseDouble(request.getParameter("s1")), Double.parseDouble(request.getParameter("s2"))).
-                setW(Double.parseDouble(request.getParameter("w1")), Double.parseDouble(request.getParameter("w2"))).
-                setZ(1.1, 1.1).
+                setS(Double.parseDouble(request.getParameter("s1")), Double.parseDouble(request.getParameter("s2")), Double.parseDouble(request.getParameter("s3"))).
+                setW(Double.parseDouble(request.getParameter("w1")), Double.parseDouble(request.getParameter("w2")), Double.parseDouble(request.getParameter("w3"))).
+                setZ(1.1, 1.1, 1.1).
                 setMp(Double.parseDouble(request.getParameter("mp"))).
-                computeZX();
+                setA(Double.parseDouble(request.getParameter("a"))).
+                compute(request.getParameter("scheme"));
 
-        rep = Mass.compute(rep);
-
-        System.out.println(request.getParameter("scheme"));
-
-
-        response.getWriter().print(rep.massToStr());
+        switch (request.getParameter("scheme")){
+            case "posled" :
+            case "parallbezpereliva" : respStr = Mass.compute(rep).massToStr2(); break;
+        }
+        response.getWriter().print(respStr);
     }
 }

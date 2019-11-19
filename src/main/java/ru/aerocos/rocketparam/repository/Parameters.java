@@ -1,5 +1,8 @@
 package ru.aerocos.rocketparam.repository;
 
+import ru.aerocos.rocketparam.model.ParallBezPerel;
+import ru.aerocos.rocketparam.model.Posledovatelnoe;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -8,6 +11,7 @@ public class Parameters {
     private double mp;
     private double m0;
     private double Vx;
+    private double a;
     private ArrayList<Double> s;
     private ArrayList<Double> z;
     private ArrayList<Double> x;
@@ -15,6 +19,15 @@ public class Parameters {
     private ArrayList<Double> mt;
     private ArrayList<Double> mb;
     private ArrayList<Double> mk;
+
+    public double getA() {
+        return a;
+    }
+
+    public Parameters setA(double a) {
+        this.a = a;
+        return this;
+    }
 
     public Parameters setVx(double Vx){
         this.Vx = Vx;
@@ -46,6 +59,13 @@ public class Parameters {
             this.z.add(zi);
         }
 
+        return this;
+    }
+
+    public Parameters incrementZ(){
+        for (int i = 0; i < z.size(); i++){
+            z.set(i, z.get(i) + 0.1);
+        }
         return this;
     }
 
@@ -94,27 +114,12 @@ public class Parameters {
         return this;
     }
 
-    private void pickZ(){
-        while (Vx - w.get(0) * Math.log(z.get(0)) - w.get(1) * Math.log(z.get(1)) > 0){
-            for (int i = 0; i < z.size(); i++) {
-                z.set(i, z.get(i) + 0.1);
-            }
-        }
-    }
-
-    private void pickX(){
-        x = new ArrayList<>();
-        x.add((z.get(0) - 1) / ((s.get(0)/(s.get(0) -1) - z.get(0) * s.get(0)/(s.get(0) - 1) + z.get(0))));
-        x.add ((z.get(1) + s.get(0)/(s.get(0) - 1) * z.get(0) * (z.get(1) - 1) - 1) / (s.get(1)/(s.get(1) - 1) * (1 - z.get(1)) + 2 * z.get(1)));
-    }
-
-    public void computeZX(){
-        pickZ();
-        pickX();
-    }
-
     public double getZ(int i) {
         return z.get(i);
+    }
+
+    public int getZSize(){
+        return z.size();
     }
 
     public double getX(int i) {
@@ -165,7 +170,16 @@ public class Parameters {
         return m0;
     }
 
-    public String massToStr(){
+    public Parameters compute(String scheme){
+        switch (scheme){
+            case "posled" : return Posledovatelnoe.compute(this);
+            case "parallbezpereliva" :
+                return ParallBezPerel.compute(this);
+            default : return this;
+        }
+    }
+
+    public String massToStr2(){
         return new DecimalFormat("#0.00").format(mb.get(0)) + "," +
                 new DecimalFormat("#0.00").format(mb.get(1)) + "," +
                 new DecimalFormat("#0.00").format(mt.get(0)) + "," +
@@ -173,5 +187,18 @@ public class Parameters {
                 new DecimalFormat("#0.00").format(mk.get(0)) + "," +
                 new DecimalFormat("#0.00").format(mk.get(1)) + "," +
                 new DecimalFormat("#0.00").format(m0);
+    }
+
+    public String massToStr3(){
+        return new DecimalFormat("#0.00").format(mb.get(0)) + "," +
+                new DecimalFormat("#0.00").format(mb.get(1)) + "," +
+                new DecimalFormat("#0.00").format(mt.get(0)) + "," +
+                new DecimalFormat("#0.00").format(mt.get(1)) + "," +
+                new DecimalFormat("#0.00").format(mk.get(0)) + "," +
+                new DecimalFormat("#0.00").format(mk.get(1)) + "," +
+                new DecimalFormat("#0.00").format(m0) + "," +
+                new DecimalFormat("#0.00").format(mb.get(2)) + "," +
+                new DecimalFormat("#0.00").format(mt.get(2)) + "," +
+                new DecimalFormat("#0.00").format(mk.get(2));
     }
 }

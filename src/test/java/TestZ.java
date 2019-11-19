@@ -7,14 +7,16 @@ public class TestZ {
 
     public static void main(String[] args) {
         Parameters rep = new Parameters();
-        rep.setVx(9529).setS(10.9, 8.6).setW(3043, 4600).setZ(1.1, 1.1).setMp(4).computeZX();
-        if (Posledovatelnoe.compute(rep) < 0){
-            System.out.println("it's ok");
-        }
+        rep.setVx(9529).
+                setS(10.9, 8.6).
+                setW(3043, 4600).
+                setZ(1.1, 1.1).
+                setMp(12).
+                setA(0.5).
+                compute("parallbezpereliva");
 
-        System.out.println(rep.getX(0) + " " + rep.getX(1));
-        rep = Mass.compute(rep);
 
-        System.out.println(rep.massToStr());
+
+        System.out.println(Mass.compute(rep).massToStr());
     }
 }
