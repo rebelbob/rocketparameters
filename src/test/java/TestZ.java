@@ -10,13 +10,10 @@ public class TestZ {
         rep.setVx(9529).
                 setS(10.9, 8.6).
                 setW(3043, 4600).
-                setZ(1.1, 1.1).
-                setMp(12).
-                setA(0.5).
-                compute("parallbezpereliva");
+                setMp(24).
+                compute("posled");
 
-
-
-        System.out.println(Mass.compute(rep).massToStr());
+        System.out.println(Mass.compute(rep).massToStr2());
+        System.out.println(rep.getX(0)  + " " + rep.getX(1));
     }
 }

@@ -26,7 +26,6 @@ public class ParametersServlet extends HttpServlet {
         rep.setVx(Double.parseDouble(request.getParameter("Vx"))).
                 setS(Double.parseDouble(request.getParameter("s1")), Double.parseDouble(request.getParameter("s2")), Double.parseDouble(request.getParameter("s3"))).
                 setW(Double.parseDouble(request.getParameter("w1")), Double.parseDouble(request.getParameter("w2")), Double.parseDouble(request.getParameter("w3"))).
-                setZ(1.1, 1.1, 1.1).
                 setMp(Double.parseDouble(request.getParameter("mp"))).
                 setA(Double.parseDouble(request.getParameter("a"))).
                 compute(request.getParameter("scheme"));

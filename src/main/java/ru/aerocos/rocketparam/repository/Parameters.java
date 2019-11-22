@@ -13,7 +13,6 @@ public class Parameters {
     private double Vx;
     private double a;
     private ArrayList<Double> s;
-    private ArrayList<Double> z;
     private ArrayList<Double> x;
     private ArrayList<Double> w;
     private ArrayList<Double> mt;
@@ -50,22 +49,6 @@ public class Parameters {
             this.s.add(si);
         }
 
-        return this;
-    }
-
-    public Parameters setZ(double... z){
-        this.z = new ArrayList<>();
-        for (double zi : z){
-            this.z.add(zi);
-        }
-
-        return this;
-    }
-
-    public Parameters incrementZ(){
-        for (int i = 0; i < z.size(); i++){
-            z.set(i, z.get(i) + 0.1);
-        }
         return this;
     }
 
@@ -112,14 +95,6 @@ public class Parameters {
         }
 
         return this;
-    }
-
-    public double getZ(int i) {
-        return z.get(i);
-    }
-
-    public int getZSize(){
-        return z.size();
     }
 
     public double getX(int i) {
@@ -173,8 +148,8 @@ public class Parameters {
     public Parameters compute(String scheme){
         switch (scheme){
             case "posled" : return Posledovatelnoe.compute(this);
-            case "parallbezpereliva" :
-                return ParallBezPerel.compute(this);
+//            case "parallbezpereliva" :
+//                return ParallBezPerel.compute(this);
             default : return this;
         }
     }
