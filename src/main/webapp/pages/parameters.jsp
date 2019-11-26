@@ -14,7 +14,7 @@
                         $.post("/rocket/parameters",
                         {
                           scheme : choice,
-                          Vx: $("#Vx").val(),
+                          H: $("#H").val(),
                           mp: $("#mp").val(),
                           s1: $("#s1").val(),
                           s2: $("#s2").val(),
@@ -44,12 +44,26 @@
                         $("#choice1").click(function(){
                             choice = "posled";
                             $("#aInput").hide();
-                            $("#stup3").hide();
+                            $("#stup3req").hide();
+                            $("#stup3res").hide();
                         });
                         $("#choice2").click(function(){
                             choice = "parallbezpereliva";
                             $("#aInput").show();
-                            $("#stup3").hide();
+                            $("#stup3req").hide();
+                            $("#stup3res").hide();
+                        });
+                        $("#choice3").click(function(){
+                            choice = "parallspereliv";
+                            $("#aInput").show();
+                            $("#stup3req").hide();
+                            $("#stup3res").hide();
+                        });
+                        $("#choice4").click(function(){
+                            choice = "trehstuppaket";
+                            $("#aInput").show();
+                            $("#stup3req").show();
+                            $("#stup3res").show();
                         });
                     });
                 </script>
@@ -75,6 +89,14 @@
                      <input type="radio" id="choice2"
                         name="scheme" value="parallbezpereliva">
                     <label for="choice2">Параллельное без перелива</label>
+                    <br>
+                    <input type="radio" id="choice3"
+                        name="scheme" value="parallspereliv">
+                    <label for="choice3">Параллельное с переливом</label>
+                    <br>
+                    <input type="radio" id="choice4"
+                        name="scheme" value="trehstuppaket">
+                    <label for="choice4">Трехступенчатый пакет</label>
                 </form>
             </div>
 
@@ -93,22 +115,24 @@
                             <td id="column"><input type="text" id="w1"></td>
                         </tr>
                         <tr>
-                            <td>Характеристическая скорость РН, м/с</td>
-                            <td id="column"><input type="text" id="Vx"></td>
+                            <td>Высота орбиты выведения, км</td>
+                            <td id="column"><input type="text" id="H"></td>
                             <td>Конструктивная характеристика ракетных блоков второй ступени, s2</td>
                             <td id="column"><input type="text" id="s2"></td>
                             <td>Удельный импульс топлива и двигателя РБ второй ступени, м/с</td>
                             <td id="column"><input type="text" id="w2"></td>
                         </tr>
-                        <tr id="aInput" hidden="true">
-                            <td>Отношение силы тяги</td>
-                            <td id="column"><input type="text" id="a" value="0"></td>
-                        </tr>
-                        <tr id="stup3" hidden="true">
+                        <tr id="stup3req" hidden="true">
+                            <td></td>
+                            <td></td>
                             <td>Конструктивная характеристика ракетных блоков третьей ступени, s3</td>
                             <td id="column"><input type="text" id="s3" value="0"></td>
                             <td>Удельный импульс топлива и двигателя РБ третьей ступени, м/с</td>
                             <td id="column"><input type="text" id="w3" value="0"></td>
+                        </tr>
+                        <tr id="aInput" hidden="true">
+                            <td>Отношение силы тяги</td>
+                            <td id="column"><input type="text" id="a" value="0"></td>
                         </tr>
                     </table>
                 </form>
@@ -132,7 +156,7 @@
                                 <td>Масса конструкции РБ второй ступени, т</td>
                                 <td id="column"><div id="mk2"></div></td>
                             </tr>
-                            <tr id="stup3" hidden="true">
+                            <tr id="stup3res" hidden="true">
                                 <td >Масса РБ третьей ступени, м/с</td>
                                 <td id="column"><div id="mb3"></div></td>
                                 <td>Масса топлива РБ третьей ступени, т</td>

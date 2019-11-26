@@ -25,12 +25,24 @@ public class Mass {
         return m0;
     }
 
-    public static Parameters compute(Parameters rep){
+    public static Parameters compute2(Parameters rep){
         rep.setMt(computeMt(rep.getX(0), rep.getMp()), computeMt(rep.getX(1), rep.getMp()));
 
         rep.setMb(computeMb(rep.getMt(0), rep.getS(0)), computeMb(rep.getMt(1), rep.getS(1)));
 
         rep.setMk(computeMk(rep.getMb(0), rep.getMt(0)), computeMk(rep.getMb(1), rep.getMt(1)));
+
+        rep.setM0(computeM0(rep.getMp(), rep.getMb()));
+
+        return rep;
+    }
+
+    public static Parameters compute3(Parameters rep){
+        rep.setMt(computeMt(rep.getX(0), rep.getMp()), computeMt(rep.getX(1), rep.getMp()), computeMt(rep.getX(2), rep.getMp()));
+
+        rep.setMb(computeMb(rep.getMt(0), rep.getS(0)), computeMb(rep.getMt(1), rep.getS(1)), computeMb(rep.getMt(2), rep.getS(2)));
+
+        rep.setMk(computeMk(rep.getMb(0), rep.getMt(0)), computeMk(rep.getMb(1), rep.getMt(1)), computeMk(rep.getMb(2), rep.getMt(2)));
 
         rep.setM0(computeM0(rep.getMp(), rep.getMb()));
 

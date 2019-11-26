@@ -1,5 +1,3 @@
-import ru.aerocos.rocketparam.model.Mass;
-import ru.aerocos.rocketparam.model.Posledovatelnoe;
 import ru.aerocos.rocketparam.repository.Parameters;
 
 public class TestZ {

@@ -17,13 +17,11 @@ public class ParametersServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        String name = request.getParameter("name");
-//        response.getWriter().print("Hello "+ name + "!!");
 
         String respStr = "";
 
         Parameters rep = new Parameters();
-        rep.setVx(Double.parseDouble(request.getParameter("Vx"))).
+        rep.setH(Double.parseDouble(request.getParameter("H"))).
                 setS(Double.parseDouble(request.getParameter("s1")), Double.parseDouble(request.getParameter("s2")), Double.parseDouble(request.getParameter("s3"))).
                 setW(Double.parseDouble(request.getParameter("w1")), Double.parseDouble(request.getParameter("w2")), Double.parseDouble(request.getParameter("w3"))).
                 setMp(Double.parseDouble(request.getParameter("mp"))).
@@ -32,7 +30,8 @@ public class ParametersServlet extends HttpServlet {
 
         switch (request.getParameter("scheme")){
             case "posled" :
-            case "parallbezpereliva" : respStr = Mass.compute(rep).massToStr2(); break;
+            case "parallbezpereliva" : respStr = Mass.compute2(rep).massToStr2(); break;
+            case "trehstuppaket" : respStr = Mass.compute3(rep).massToStr3(); break;
         }
         response.getWriter().print(respStr);
     }

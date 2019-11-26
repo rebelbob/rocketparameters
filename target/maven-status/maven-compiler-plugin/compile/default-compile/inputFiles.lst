@@ -1,7 +1,9 @@
-/home/stanislav/Dev/rocketparameters/src/main/java/ru/aerocos/rocketparam/model/Posledovatelnoe.java
-/home/stanislav/Dev/rocketparameters/src/main/java/ru/aerocos/rocketparam/repository/Parameters.java
-/home/stanislav/Dev/rocketparameters/src/main/java/ru/aerocos/rocketparam/model/ParallBezPerel.java
-/home/stanislav/Dev/rocketparameters/src/main/java/ru/aerocos/rocketparam/model/Mass.java
-/home/stanislav/Dev/rocketparameters/src/main/java/ru/aerocos/rocketparam/web/Servlet.java
-/home/stanislav/Dev/rocketparameters/src/main/java/ru/aerocos/rocketparam/Main.java
-/home/stanislav/Dev/rocketparameters/src/main/java/ru/aerocos/rocketparam/web/ParametersServlet.java
+/home/stanislav/Develop/rocketparameters/src/main/java/ru/aerocos/rocketparam/model/scheme/ParallSPerel.java
+/home/stanislav/Develop/rocketparameters/src/main/java/ru/aerocos/rocketparam/web/ParametersServlet.java
+/home/stanislav/Develop/rocketparameters/src/main/java/ru/aerocos/rocketparam/Main.java
+/home/stanislav/Develop/rocketparameters/src/main/java/ru/aerocos/rocketparam/model/Mass.java
+/home/stanislav/Develop/rocketparameters/src/main/java/ru/aerocos/rocketparam/repository/Parameters.java
+/home/stanislav/Develop/rocketparameters/src/main/java/ru/aerocos/rocketparam/model/scheme/ParallBezPerel.java
+/home/stanislav/Develop/rocketparameters/src/main/java/ru/aerocos/rocketparam/model/scheme/TrehstupPaket.java
+/home/stanislav/Develop/rocketparameters/src/main/java/ru/aerocos/rocketparam/web/Servlet.java
+/home/stanislav/Develop/rocketparameters/src/main/java/ru/aerocos/rocketparam/model/scheme/Posledovatelnoe.java

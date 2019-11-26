@@ -1,13 +1,16 @@
 package ru.aerocos.rocketparam.repository;
 
-import ru.aerocos.rocketparam.model.ParallBezPerel;
-import ru.aerocos.rocketparam.model.Posledovatelnoe;
+import ru.aerocos.rocketparam.model.scheme.ParallBezPerel;
+import ru.aerocos.rocketparam.model.scheme.ParallSPerel;
+import ru.aerocos.rocketparam.model.scheme.Posledovatelnoe;
+import ru.aerocos.rocketparam.model.scheme.TrehstupPaket;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Parameters {
 
+    private double Rz = 6371.4;
     private double mp;
     private double m0;
     private double Vx;
@@ -25,6 +28,12 @@ public class Parameters {
 
     public Parameters setA(double a) {
         this.a = a;
+        return this;
+    }
+
+    public Parameters setH(double H){
+        double roo = H + Rz;
+        Vx = Math.sqrt(398600 / roo * (2 * roo / Rz - 1)) * 1000;
         return this;
     }
 
@@ -148,8 +157,9 @@ public class Parameters {
     public Parameters compute(String scheme){
         switch (scheme){
             case "posled" : return Posledovatelnoe.compute(this);
-//            case "parallbezpereliva" :
-//                return ParallBezPerel.compute(this);
+            case "parallbezpereliva" : return ParallBezPerel.compute(this);
+            case "parallspereliv" : return ParallSPerel.compute(this);
+            case "trehstuppaket" : return TrehstupPaket.compute(this);
             default : return this;
         }
     }
