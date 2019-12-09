@@ -2,7 +2,7 @@ var slideNum = 1;
 
 $(document).ready(function(){
     $(".slider_control_next").click(function(){
-        if(slideNum < 3){
+        if(slideNum < 5){
             $(".slide").animate({left: '-=100%'});
             $(".slider_control_prev").show();
             slideNum += 1;

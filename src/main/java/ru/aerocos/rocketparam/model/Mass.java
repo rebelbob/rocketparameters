@@ -1,6 +1,6 @@
 package ru.aerocos.rocketparam.model;
 
-import ru.aerocos.rocketparam.repository.Parameters;
+import ru.aerocos.rocketparam.repository.MassParam;
 
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ public class Mass {
         return m0;
     }
 
-    public static Parameters compute2(Parameters rep){
+    public static MassParam compute2(MassParam rep){
         rep.setMt(computeMt(rep.getX(0), rep.getMp()), computeMt(rep.getX(1), rep.getMp()));
 
         rep.setMb(computeMb(rep.getMt(0), rep.getS(0)), computeMb(rep.getMt(1), rep.getS(1)));
@@ -37,7 +37,7 @@ public class Mass {
         return rep;
     }
 
-    public static Parameters compute3(Parameters rep){
+    public static MassParam compute3(MassParam rep){
         rep.setMt(computeMt(rep.getX(0), rep.getMp()), computeMt(rep.getX(1), rep.getMp()), computeMt(rep.getX(2), rep.getMp()));
 
         rep.setMb(computeMb(rep.getMt(0), rep.getS(0)), computeMb(rep.getMt(1), rep.getS(1)), computeMb(rep.getMt(2), rep.getS(2)));

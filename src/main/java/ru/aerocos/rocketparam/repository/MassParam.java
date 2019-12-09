@@ -8,7 +8,7 @@ import ru.aerocos.rocketparam.model.scheme.TrehstupPaket;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class Parameters {
+public class MassParam {
 
     private double Rz = 6371.4;
     private double mp;
@@ -26,33 +26,33 @@ public class Parameters {
         return a;
     }
 
-    public Parameters setA(double a) {
+    public MassParam setA(double a) {
         this.a = a;
         return this;
     }
 
-    public Parameters setH(double H){
+    public MassParam setH(double H){
         double roo = H + Rz;
         Vx = Math.sqrt(398600 / roo * (2 * roo / Rz - 1)) * 1000;
         return this;
     }
 
-    public Parameters setVx(double Vx){
+    public MassParam setVx(double Vx){
         this.Vx = Vx;
         return this;
     }
 
-    public Parameters setM0(double m0){
+    public MassParam setM0(double m0){
         this.m0 = m0;
         return this;
     }
 
-    public Parameters setMp(double mp){
+    public MassParam setMp(double mp){
         this.mp = mp;
         return this;
     }
 
-    public Parameters setS(double... s){
+    public MassParam setS(double... s){
         this.s = new ArrayList<>();
         for (double si : s){
             this.s.add(si);
@@ -61,7 +61,7 @@ public class Parameters {
         return this;
     }
 
-    public Parameters setX(double... x){
+    public MassParam setX(double... x){
         this.x = new ArrayList<>();
         for (double xi : x){
             this.x.add(xi);
@@ -70,7 +70,7 @@ public class Parameters {
         return this;
     }
 
-    public Parameters setW(double... w){
+    public MassParam setW(double... w){
         this.w = new ArrayList<>();
         for (double wi : w){
             this.w.add(wi);
@@ -79,7 +79,7 @@ public class Parameters {
         return this;
     }
 
-    public Parameters setMt(double... mt){
+    public MassParam setMt(double... mt){
         this.mt = new ArrayList<>();
         for (double mti : mt){
             this.mt.add(mti);
@@ -88,7 +88,7 @@ public class Parameters {
         return this;
     }
 
-    public Parameters setMb(double... mb){
+    public MassParam setMb(double... mb){
         this.mb = new ArrayList<>();
         for (double mbi : mb){
             this.mb.add(mbi);
@@ -97,7 +97,7 @@ public class Parameters {
         return this;
     }
 
-    public Parameters setMk(double... mk){
+    public MassParam setMk(double... mk){
         this.mk = new ArrayList<>();
         for (double mki : mk){
             this.mk.add(mki);
@@ -154,7 +154,7 @@ public class Parameters {
         return m0;
     }
 
-    public Parameters compute(String scheme){
+    public MassParam compute(String scheme){
         switch (scheme){
             case "posled" : return Posledovatelnoe.compute(this);
             case "parallbezpereliva" : return ParallBezPerel.compute(this);

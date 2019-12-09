@@ -174,6 +174,16 @@
                     </form>
             </div>
 
+            <div class="slide slide4">
+                <h2>Проверочный рассчёт</h2>
+                <hr><br>
+            </div>
+
+            <div class="slide slide5">
+                <h2>Графики</h2>
+                <hr><br>
+            </div>
+
             <a class="button slider_control_prev" href="#" role="button">Назад</a>
             <a class="button slider_control_next" href="#" role="button">Далее</a>
         </div>

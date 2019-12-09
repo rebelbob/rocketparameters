@@ -1,10 +1,10 @@
-import ru.aerocos.rocketparam.repository.Parameters;
+import ru.aerocos.rocketparam.repository.MassParam;
 
 public class TestZ {
 
 
     public static void main(String[] args) {
-        Parameters rep = new Parameters();
+        MassParam rep = new MassParam();
         rep.setVx(9529).
                 setS(10.9, 8.7).
                 setW(3043, 4600).

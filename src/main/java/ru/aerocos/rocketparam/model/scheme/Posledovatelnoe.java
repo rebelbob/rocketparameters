@@ -1,10 +1,10 @@
 package ru.aerocos.rocketparam.model.scheme;
 
-import ru.aerocos.rocketparam.repository.Parameters;
+import ru.aerocos.rocketparam.repository.MassParam;
 
 public class Posledovatelnoe {
 
-    public static Parameters compute(Parameters param){
+    public static MassParam compute(MassParam param){
         double x1 = 20;
         double x2 = 20;
         double s1division = param.getS(0) / (param.getS(0) - 1);

@@ -1,7 +1,7 @@
 package ru.aerocos.rocketparam.web;
 
 import ru.aerocos.rocketparam.model.Mass;
-import ru.aerocos.rocketparam.repository.Parameters;
+import ru.aerocos.rocketparam.repository.MassParam;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +20,7 @@ public class ParametersServlet extends HttpServlet {
 
         String respStr = "";
 
-        Parameters rep = new Parameters();
+        MassParam rep = new MassParam();
         rep.setH(Double.parseDouble(request.getParameter("H"))).
                 setS(Double.parseDouble(request.getParameter("s1")), Double.parseDouble(request.getParameter("s2")), Double.parseDouble(request.getParameter("s3"))).
                 setW(Double.parseDouble(request.getParameter("w1")), Double.parseDouble(request.getParameter("w2")), Double.parseDouble(request.getParameter("w3"))).
