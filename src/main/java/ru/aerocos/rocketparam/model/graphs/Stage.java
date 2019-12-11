@@ -1,6 +1,6 @@
 package ru.aerocos.rocketparam.model.graphs;
 
-public class FirstStage {
+public class Stage {
 
     private double t = 0; // начальное время
     private double x = 0; // начальная координата x
@@ -15,17 +15,20 @@ public class FirstStage {
     private double dt = 1; //шаг интегрирования
     private double g = 9.8; //ускорение свободного падения
     private double T0 = 288.15; //стандартная температура на уровне моря
-    private double L = 0.0065; //среднее значение вертикальной компоненты градиента температур
+    private double L = -0.0065; //среднее значение вертикальной компоненты градиента температур
     private double p0 = 101325; //стандартное атмосферное давление на уровне моря
     private double molM = 0.0289644; // молярная масса сухого воздуха
     private double R = 8.31447; //универсальная газовая постоянная
     private double betta; //угол полураствора конуса
-    private double Cx = 2 * betta * betta; //коэффициент лобового сопротивления
+    private double Cx; //коэффициент лобового сопротивления
     private double plotnVozd = 1.225; //начальная плотность воздуха
     private double P; // сила тяги ступени
     private double tk; // время работы ступени
     private double D; // диаметр ступени
     private double ms; //секундный массовый расход ступени
+    private double m0; //начальная масса ступени
+    private double t1k; //время полета предыдущей ступени(если есть)
+    private  double tetta1K; //угол наклона траектории предыдущей ступени (если есть)
 
     private double m; //масса ракеты в данный момент времени
     private double Xa;
@@ -38,19 +41,15 @@ public class FirstStage {
     private double tr;
 
     public void setP(double p) {
-        P = p;
+        P = p * 1000;
     }
 
     public void setTk(double tk) {
         this.tk = tk;
     }
 
-    public void setD(double d) {
-        D = d;
-    }
-
     public void setBetta(double betta) {
-        this.betta = betta;
+        this.betta = betta * Math.PI / 180;
     }
 
     public void setSMid(double D){
@@ -61,19 +60,54 @@ public class FirstStage {
         ms = P / w;
     }
 
-    private void getTetta(){
-        if (V < 50){
-            tetta = 90 * Math.PI / 180;
-            tettaK = Math.PI / 2 * 10 / 45;
-            tr = t;
-        } else if (t > tk){
-            tetta = (Math.PI / 2) / Math.pow(tk - tr, 2) * Math.pow(tk - t, 2) + tettaK;
+    public void setM(double m0){
+        this.m0 = m0;
+    }
+
+    public void setParam(double P, double tk, double betta, double D, double w, double m, int stage){
+        setP(P);
+        setTk(tk);
+        setBetta(betta);
+        setSMid(D);
+        setMs(w);
+        setM(m);
+        Cx = 2 * betta * betta;
+
+        switch (stage){
+            case 1 :
+                tetta = 90 * Math.PI / 180;
+                tettaK = Math.PI / 2 * 11 / 45;
+                break;
+            case 2 :
+                tettaK = Math.PI / 2 * 5 / 45;
+                tetta = tettaK - (t - t1k) / (tk - t1k)*(tetta1K-tettaK);
+                break;
+            case 3 :
+
         }
     }
 
-    public void compute(){
+
+    private void getTetta(int stage){
+        switch (stage){
+            case 1 :
+                if (V < 50) {
+                    tr = t;
+                }else {
+                    tetta = (Math.PI / 2 - tettaK) / Math.pow(tk - tr, 2) * Math.pow(tk - t, 2) + tettaK;
+                }
+                break;
+            case 2 :
+                tetta = tettaK - (t - t1k) / (tk - t1k)*(tetta1K-tettaK);
+                break;
+            case 3 :
+
+        }
+    }
+
+    public void computeStep(){
         t = t + dt;
-        m = m - ms * t;
+        m = m0 - ms * t;
         Xa = Cx * skorNapor * SMid;
         dVx = (P - Xa) * Math.cos(tetta) / m;
         dVy = ((P - Xa) * Math.sin(tetta) - m * g) / m;
@@ -88,6 +122,19 @@ public class FirstStage {
         p = p0 * Math.pow(0.87, y);
         plotnVozd = p * molM / (R * T);
         skorNapor = plotnVozd * V * V / 2;
-        getTetta();
+
+        System.out.println(tetta * 180 / Math.PI + " " + x + " " + y);
+    }
+
+    public void compute(double P, double tk, double betta, double D, double w, double m, int stage){
+        setParam(P, tk, betta, D, w, m, stage);
+        while (t < tk){
+            computeStep();
+            getTetta(stage);
+        }
+
+        t1k = tk;
+        tetta1K = tettaK;
+        t = 0;
     }
 }
