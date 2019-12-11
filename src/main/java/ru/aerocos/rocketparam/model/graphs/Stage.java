@@ -27,8 +27,8 @@ public class Stage {
     private double D; // диаметр ступени
     private double ms; //секундный массовый расход ступени
     private double m0; //начальная масса ступени
-    private double t1k; //время полета предыдущей ступени(если есть)
-    private  double tetta1K; //угол наклона траектории предыдущей ступени (если есть)
+    private double tPrev; //время полета предыдущей ступени(если есть)
+    private  double tettaPrev; //угол наклона траектории предыдущей ступени (если есть)
 
     private double m; //масса ракеты в данный момент времени
     private double Xa;
@@ -39,6 +39,7 @@ public class Stage {
     private double T;
     private double p;
     private double tr;
+    private double tStage = 0;
 
     public void setP(double p) {
         P = p * 1000;
@@ -72,19 +73,6 @@ public class Stage {
         setMs(w);
         setM(m);
         Cx = 2 * betta * betta;
-
-        switch (stage){
-            case 1 :
-                tetta = 90 * Math.PI / 180;
-                tettaK = Math.PI / 2 * 11 / 45;
-                break;
-            case 2 :
-                tettaK = Math.PI / 2 * 5 / 45;
-                tetta = tettaK - (t - t1k) / (tk - t1k)*(tetta1K-tettaK);
-                break;
-            case 3 :
-
-        }
     }
 
 
@@ -92,16 +80,17 @@ public class Stage {
         switch (stage){
             case 1 :
                 if (V < 50) {
+                    tetta = 90 * Math.PI / 180;
                     tr = t;
                 }else {
                     tetta = (Math.PI / 2 - tettaK) / Math.pow(tk - tr, 2) * Math.pow(tk - t, 2) + tettaK;
                 }
                 break;
             case 2 :
-                tetta = tettaK - (t - t1k) / (tk - t1k)*(tetta1K-tettaK);
+                tetta = tettaPrev - (t - tPrev) / (tk) * (tettaPrev - tettaK);
                 break;
             case 3 :
-
+                tetta = tettaPrev - (t - (tStage - tk)) / tk * (tettaPrev - tettaK);
         }
     }
 
@@ -126,15 +115,16 @@ public class Stage {
         System.out.println(tetta * 180 / Math.PI + " " + x + " " + y);
     }
 
-    public void compute(double P, double tk, double betta, double D, double w, double m, int stage){
+    public void compute(double P, double tk, double betta, double D, double w, double m, int stage, int tettaK){
         setParam(P, tk, betta, D, w, m, stage);
-        while (t < tk){
-            computeStep();
+        this.tettaK = tettaK * Math.PI / 180;
+        tStage += tk;
+        while (t < tStage){
             getTetta(stage);
+            computeStep();
         }
 
-        t1k = tk;
-        tetta1K = tettaK;
-        t = 0;
+        tPrev = tk;
+        tettaPrev = this.tettaK;
     }
 }
