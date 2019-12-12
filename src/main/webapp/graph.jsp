@@ -13,6 +13,7 @@
     </script>
     <script type="text/javascript">
             var dat1=${nums};
+            var dat2=${nums2};
             var chart1;
 
             $(document).ready(function(){
@@ -22,7 +23,8 @@
                     yAxis:[{
              	        title:{text: 'Высота'}}],
              	    xAxis:[{
-                        title:{text: 'Время'}}],
+                        title:{text: 'Время'},
+                        categories:dat2}],
                     tooltip: {
                                     crosshairs: true,
                                     shared: true

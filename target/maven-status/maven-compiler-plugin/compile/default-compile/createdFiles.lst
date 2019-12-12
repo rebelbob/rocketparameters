@@ -1,10 +1,10 @@
 ru/aerocos/rocketparam/model/scheme/ParallBezPerel.class
 ru/aerocos/rocketparam/model/Mass.class
 ru/aerocos/rocketparam/repository/MassParam.class
-ru/aerocos/rocketparam/model/scheme/TrehstupPaket.class
 ru/aerocos/rocketparam/model/scheme/ParallSPerel.class
-ru/aerocos/rocketparam/Main.class
+ru/aerocos/rocketparam/model/scheme/TrehstupPaket.class
 ru/aerocos/rocketparam/web/ParametersServlet.class
-ru/aerocos/rocketparam/model/graphs/FirstStage.class
+ru/aerocos/rocketparam/Main.class
+ru/aerocos/rocketparam/web/GraphServlet.class
 ru/aerocos/rocketparam/model/scheme/Posledovatelnoe.class
 ru/aerocos/rocketparam/web/Servlet.class

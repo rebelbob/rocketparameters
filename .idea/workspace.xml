@@ -7,11 +7,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1768901-ae7a-4c51-91eb-06b63893ca23" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/model/graphs/Stage1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/web/GraphServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/model/graphs/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/model/graphs/Stage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/web/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/web/Servlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/graph.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/graph.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ru/aerocos/rocketparam/model/graphs/Stage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/aerocos/rocketparam/model/graphs/Stage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestStage.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,23 +75,24 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576041148377" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/pages" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/pages" />
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp/pages" />
       <recent name="$PROJECT_DIR$/src/main/webapp/js" />
       <recent name="$PROJECT_DIR$/src/main" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
-    </key>
   </component>
-  <component name="RunManager" selected="Application.TestStage">
+  <component name="RunManager" selected="Maven.Tomcat">
     <configuration name="TestStage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestStage" />
       <module name="rocketparameters" />
@@ -205,6 +210,10 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="619" y="210" width="671" height="699" key="#TestZ/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576063233670" />
+    <state x="768" y="256" width="374" height="599" key="#com.intellij.ide.util.MemberChooser" timestamp="1576153764249">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state x="768" y="256" width="374" height="599" key="#com.intellij.ide.util.MemberChooser/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576153764249" />
     <state x="643" y="280" width="624" height="551" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576051047393">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
@@ -213,22 +222,22 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="743" y="310" width="424" height="491" key="FileChooserDialogImpl/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576051086038" />
-    <state width="1874" height="265" key="GridCell.Tab.0.bottom" timestamp="1576065964652">
+    <state width="1874" height="265" key="GridCell.Tab.0.bottom" timestamp="1576163185000">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="265" key="GridCell.Tab.0.bottom/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576065964652" />
-    <state width="1874" height="265" key="GridCell.Tab.0.center" timestamp="1576065964652">
+    <state width="1874" height="265" key="GridCell.Tab.0.bottom/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576163185000" />
+    <state width="1874" height="265" key="GridCell.Tab.0.center" timestamp="1576163184999">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="265" key="GridCell.Tab.0.center/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576065964652" />
-    <state width="1874" height="265" key="GridCell.Tab.0.left" timestamp="1576065964652">
+    <state width="1874" height="265" key="GridCell.Tab.0.center/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576163184999" />
+    <state width="1874" height="265" key="GridCell.Tab.0.left" timestamp="1576163184999">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="265" key="GridCell.Tab.0.left/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576065964652" />
-    <state width="1874" height="265" key="GridCell.Tab.0.right" timestamp="1576065964652">
+    <state width="1874" height="265" key="GridCell.Tab.0.left/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576163184999" />
+    <state width="1874" height="265" key="GridCell.Tab.0.right" timestamp="1576163184999">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="265" key="GridCell.Tab.0.right/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576065964652" />
+    <state width="1874" height="265" key="GridCell.Tab.0.right/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576163184999" />
     <state x="269" y="154" width="1372" height="803" key="new project wizard" timestamp="1576051112466">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
