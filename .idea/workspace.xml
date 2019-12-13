@@ -7,15 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1768901-ae7a-4c51-91eb-06b63893ca23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/model/graphs/Stage1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/web/GraphServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/js/graph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/model/graphs/Stage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/model/graphs/Stage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/web/Servlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/web/Servlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/graph.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/graph.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestStage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestStage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ru/aerocos/rocketparam/model/graphs/Stage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ru/aerocos/rocketparam/model/graphs/Stage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/TestStage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestStage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/web/GraphServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/aerocos/rocketparam/web/GraphServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/graph.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/graph.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,22 +218,38 @@
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
     <state x="743" y="310" width="424" height="491" key="FileChooserDialogImpl/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576051086038" />
-    <state width="1874" height="265" key="GridCell.Tab.0.bottom" timestamp="1576163185000">
+    <state width="1874" height="265" key="GridCell.Tab.0.bottom" timestamp="1576238836310">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="265" key="GridCell.Tab.0.bottom/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576163185000" />
-    <state width="1874" height="265" key="GridCell.Tab.0.center" timestamp="1576163184999">
+    <state width="1874" height="265" key="GridCell.Tab.0.bottom/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576238836310" />
+    <state width="1874" height="265" key="GridCell.Tab.0.center" timestamp="1576238836310">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="265" key="GridCell.Tab.0.center/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576163184999" />
-    <state width="1874" height="265" key="GridCell.Tab.0.left" timestamp="1576163184999">
+    <state width="1874" height="265" key="GridCell.Tab.0.center/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576238836310" />
+    <state width="1874" height="265" key="GridCell.Tab.0.left" timestamp="1576238836310">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="265" key="GridCell.Tab.0.left/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576163184999" />
-    <state width="1874" height="265" key="GridCell.Tab.0.right" timestamp="1576163184999">
+    <state width="1874" height="265" key="GridCell.Tab.0.left/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576238836310" />
+    <state width="1874" height="265" key="GridCell.Tab.0.right" timestamp="1576238836310">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>
-    <state width="1874" height="265" key="GridCell.Tab.0.right/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576163184999" />
+    <state width="1874" height="265" key="GridCell.Tab.0.right/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576238836310" />
+    <state width="1874" height="331" key="GridCell.Tab.1.bottom" timestamp="1576238062696">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="331" key="GridCell.Tab.1.bottom/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576238062696" />
+    <state width="1874" height="331" key="GridCell.Tab.1.center" timestamp="1576238062696">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="331" key="GridCell.Tab.1.center/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576238062696" />
+    <state width="1874" height="331" key="GridCell.Tab.1.left" timestamp="1576238062696">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="331" key="GridCell.Tab.1.left/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576238062696" />
+    <state width="1874" height="331" key="GridCell.Tab.1.right" timestamp="1576238062696">
+      <screen x="0" y="25" width="1920" height="1055" />
+    </state>
+    <state width="1874" height="331" key="GridCell.Tab.1.right/0.25.1920.1055/1920.0.1920.1080@0.25.1920.1055" timestamp="1576238062696" />
     <state x="269" y="154" width="1372" height="803" key="new project wizard" timestamp="1576051112466">
       <screen x="0" y="25" width="1920" height="1055" />
     </state>

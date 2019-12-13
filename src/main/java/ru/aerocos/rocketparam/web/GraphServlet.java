@@ -25,13 +25,6 @@ public class GraphServlet extends HttpServlet {
         request.setAttribute("alpha", toDoubleList(stage1.getTime(), stage1.getAlphaList()));
         request.setAttribute("hight", toDoubleList(stage1.getTime(), stage1.getHight()));
 
-//        request.setAttribute("speed", stage1.getSpeed());
-//        request.setAttribute("hight", stage1.getHight());
-//        request.setAttribute("mass", stage1.getMass());
-//        request.setAttribute("alphaList", stage1.getAlphaList());
-//        request.setAttribute("tettaList", stage1.getTettaList());
-//        request.setAttribute("fiList", stage1.getFiList());
-
         request.getRequestDispatcher("pages/graph.jsp").forward(request, response);
     }
 

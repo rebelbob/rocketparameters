@@ -3,119 +3,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>График</title>
+    <title>Графики</title>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/highcharts.js"></script>
-
-    <script type="text/javascript">
-            var chart1;
-
-            $(document).ready(function(){
-                chart1 = new Highcharts.Chart({
-                    chart: {renderTo: 'speed',  type: 'spline'},
-                    title: {text: 'Скорость'},
-                    yAxis:[{
-             	        title:{text: 'Скорость'}}],
-             	    xAxis:[{
-                        title:{text: 'Время'}}],
-                    plotOptions: {
-                        spline: {
-                             marker: {
-                                  enabled: false
-                             }
-                        }
-                    },
-                    series: [{data: ${speed}}]
-                });
-             });
-
-             var chart2;
-
-                                  $(document).ready(function(){
-                                      chart2 = new Highcharts.Chart({
-                                          chart: {renderTo: 'fi',  type: 'spline'},
-                                          title: {text: 'Угол тангажа'},
-                                          yAxis:[{
-                                   	        title:{text: 'Угол тангажа'}}],
-                                   	    xAxis:[{
-                                              title:{text: 'Время'}}],
-                                          plotOptions: {
-                                              spline: {
-                                                   marker: {
-                                                        enabled: false
-                                                   }
-                                              }
-                                          },
-                                          series: [{data: ${fi}}]
-                                      });
-                                   });
-
-
-          var chart3;
-
-                      $(document).ready(function(){
-                          chart3 = new Highcharts.Chart({
-                              chart: {renderTo: 'tetta',  type: 'spline'},
-                              title: {text: 'Тетта'},
-                              yAxis:[{
-                       	        title:{text: 'Тетта'}}],
-                       	    xAxis:[{
-                                  title:{text: 'Время'}}],
-                              plotOptions: {
-                                  spline: {
-                                       marker: {
-                                            enabled: false
-                                       }
-                                  }
-                              },
-                              series: [{data: ${tetta}}]
-                          });
-                       });
-
-
-          var chart4;
-
-                                $(document).ready(function(){
-                                    chart4 = new Highcharts.Chart({
-                                        chart: {renderTo: 'alpha',  type: 'spline'},
-                                        title: {text: 'Альфа'},
-                                        yAxis:[{
-                                 	        title:{text: 'Альфа'}}],
-                                 	    xAxis:[{
-                                            title:{text: 'Время'}}],
-                                        plotOptions: {
-                                            spline: {
-                                                 marker: {
-                                                      enabled: false
-                                                 }
-                                            }
-                                        },
-                                        series: [{data: ${alpha}}]
-                                    });
-                                 });
-
-         var chart5;
-
-                                $(document).ready(function(){
-                                    chart5 = new Highcharts.Chart({
-                                        chart: {renderTo: 'hight',  type: 'spline'},
-                                        title: {text: 'Высота'},
-                                        yAxis:[{
-                                 	        title:{text: 'Высота'}}],
-                                 	    xAxis:[{
-                                            title:{text: 'Время'}}],
-                                        plotOptions: {
-                                            spline: {
-                                                 marker: {
-                                                      enabled: false
-                                                 }
-                                            }
-                                        },
-                                        series: [{data: ${hight}}]
-                                    });
-                                 });
-         </script>
+    <script src="js/graph.js"></script>
 
 </head>
 <body>
@@ -123,7 +15,15 @@
     <h3><a href="index.html">Home</a></h3>
     <hr>
     <h2>Графики</h2>
-    <div id="speed" style="width: 700px; height: 600px; display:inline-block;"></div>
+     <script type="text/javascript">
+        graph('Скорость', 'Время', 'speed', ${speed});
+        graph('Угол тангажа', 'Время', 'fi', ${fi});
+        graph('Тетта', 'Время', 'tetta', ${tetta});
+        graph('Альфа', 'Время', 'alpha', ${alpha});
+        graph('Высота', 'Время', 'hight', ${hight});
+
+     </script>
+     <div id="speed" style="width: 700px; height: 600px; display:inline-block;"></div>
      <div id="fi" style="width: 700px; height: 600px; display:inline-block;"></div>
      <div id="tetta" style="width: 700px; height: 600px; display:inline-block;"></div>
      <div id="alpha" style="width: 700px; height: 600px; display:inline-block;"></div>
