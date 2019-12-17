@@ -1,11 +1,11 @@
 package ru.aerocos.rocketparam.model.graphs;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Stage1 {
 
+    private int N = 1; //номер ступени
     private double t = 0; // начальное время
     private double x = 0; // начальная координата x
     private double y = 0; //начальная координата y
@@ -48,9 +48,16 @@ public class Stage1 {
     private double T;
     private double p;
     private double Vkr;
-    private double a;
+    private double alpha;
     private double tr;
     private double tStage = 0;
+    private double a = 331; //скорость звука, м/с
+    private double M = 0; //число маха
+    private double aDash = 0.2;
+    private double K;
+    private double fi0; //значение угла в начале работы ступени
+    private double fiK; //значение угла в конце работы ступени
+    private double fiDot;
 
     public void setP(double p) {
         P = p * 1000;
@@ -75,6 +82,9 @@ public class Stage1 {
     public void setM(double m0){
         this.m0 = m0;
     }
+    public void setaDash(double aDash){
+        this.aDash = aDash;
+    }
 
     List<Integer> speed = new ArrayList<>();
     List<Integer> hight = new ArrayList<>();
@@ -94,28 +104,51 @@ public class Stage1 {
         Cx = 2 * this.betta * this.betta;
     }
 
+    private void getAlpha(){
+        if (M < 0.1){
+            alpha = 0;
+        } else {
+            g = 1;
+            K = 2 * Math.exp(5) * (0.1 - M);
+            System.out.println(K);
+            alpha = aDash * K * (K - 2);
+        }
+    }
+
+    private void getFi(){
+        if (N == 1){
+            fi = alpha + tetta;
+        } else {
+            fiDot = (fiK - fi0) / tk;
+            fi = fi0 + fiDot * (t - (tStage - tk));
+        }
+    }
+
     private void getTetta(){
         if (V < 50) {
-            fi = 90 * Math.PI / 180;
             tetta = 90 * Math.PI / 180;
             tr = t;
         }else {
-            g = 1;
-            fi = tettaK + (Math.PI / 2 - tettaK) / Math.pow(tStage - tr, 2) * Math.pow(tStage - t, 2);
-            //System.out.println(tettaK + " " + tk + " " + tStage + " " + t);
+//            System.out.println(tettaK + " " + tk + " " + tStage + " " + t);
             Vkr = V1 * Math.sqrt(Rz / (Rz + y));
-            tetta += (P * Math.sin(a) + Ya) / (m * V) - g * Math.cos(tetta) * (1 - V * V / (Vkr * Vkr)) / V;
-            a = fi - tetta;
+            tetta += (P * Math.sin(alpha) + Ya) / (m * V) - g * Math.cos(tetta) * (1 - V * V / (Vkr * Vkr)) / V;
         }
+    }
+
+    private void getAngle(){
+        getAlpha();
+        getTetta();
+        getFi();
     }
 
     public void step(){
         t = t + dt;
         m = m0 - ms * (t - tStage + tk);
         Xa = Cx * skorNapor * SMid;
-        Cy = 3 * a;
+        Cy = 3 * alpha;
         Ya = Cy * skorNapor * SMid;
-        V += (P * Math.cos(a) - Xa) / m - Math.sin(tetta) * g;
+        V += (P * Math.cos(alpha) - Xa) / m - Math.sin(tetta) * g;
+        M = V / a;
         dx = V * Math.cos(tetta) * dt;
         dy = V * Math.sin(tetta) * dt;
         x = x + dx * dt;
@@ -127,14 +160,13 @@ public class Stage1 {
 
         mass.add((int)m);
         speed.add((int)V);
-        alphaList.add((int)(a * 180 / Math.PI));
+        alphaList.add((int)(alpha * 180 / Math.PI));
         tettaList.add((int)(tetta * 180 / Math.PI));
         fiList.add((int)(fi * 180 / Math.PI));
         hight.add((int)y);
         time.add((int)t);
 
-
-//        System.out.println(tetta * 180 / Math.PI + " " +  a * 180 / Math.PI + " " + fi * 180 / Math.PI + " " + V + " " + y + " " + m);
+        System.out.println(tetta * 180 / Math.PI + " " +  alpha * 180 / Math.PI + " " + fi * 180 / Math.PI + " " + V + " " + y + " " + m);
     }
 
     public void compute(double P, double tk, double betta, double D, double w, double m, int tettaK){
@@ -142,17 +174,20 @@ public class Stage1 {
         this.tettaK = tettaK * Math.PI / 180;
         tStage += tk;
         while (t < tStage){
-            getTetta();
+            getAngle();
             step();
         }
 
         tPrev = tk;
         tettaPrev = this.tettaK;
+        N++;
+        fi0 = fi;
+        fiK = 40 *  Math.PI / 180;
 
-//        System.out.println("---------------------" +
-//                "\n" +
-//                "-------------------");
-//        System.out.println(tettaK + " " + tk + " " + tStage + " " + t);
+        System.out.println("---------------------" +
+                "\n" +
+                "-------------------");
+        System.out.println(tettaK + " " + tk + " " + tStage + " " + t);
     }
 
     public List<Integer> getSpeed() {

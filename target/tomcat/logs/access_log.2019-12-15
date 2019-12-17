@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:13 +0400] "GET /rocket HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:13 +0400] "GET /rocket/ HTTP/1.1" 200 186 http-bio-8080-exec-3 13
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:13 +0400] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-2 0
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:14 +0400] "GET /rocket/parameters HTTP/1.1" 200 9850 http-bio-8080-exec-4 516
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:14 +0400] "GET /rocket/css/style.css HTTP/1.1" 304 - http-bio-8080-exec-6 3
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:14 +0400] "GET /rocket/js/myjs.js HTTP/1.1" 304 - http-bio-8080-exec-5 2
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:14 +0400] "GET /rocket/rocket.jpg HTTP/1.1" 304 - http-bio-8080-exec-8 2
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:25 +0400] "GET /rocket/graph HTTP/1.1" 200 17223 http-bio-8080-exec-10 20
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:25 +0400] "GET /rocket/js/graph.js HTTP/1.1" 200 942 http-bio-8080-exec-10 1
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:25 +0400] "GET /rocket/js/jquery.min.js HTTP/1.1" 304 - http-bio-8080-exec-9 2
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:14:42:25 +0400] "GET /rocket/js/highcharts.js HTTP/1.1" 304 - http-bio-8080-exec-3 2
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:17:19:54 +0400] "GET /rocket HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:17:19:54 +0400] "GET /rocket/ HTTP/1.1" 304 - http-bio-8080-exec-3 9
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:17:19:54 +0400] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-2 0
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:17:19:54 +0400] "GET /rocket/parameters HTTP/1.1" 200 9850 http-bio-8080-exec-4 32
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:17:20:23 +0400] "GET /rocket/graph HTTP/1.1" 200 17974 http-bio-8080-exec-6 39
+0:0:0:0:0:0:0:1 - - [15/Dec/2019:17:20:23 +0400] "GET /rocket/js/graph.js HTTP/1.1" 304 - http-bio-8080-exec-7 0
