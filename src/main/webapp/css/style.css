@@ -61,6 +61,11 @@
     float: right;
 }
 
+.graph{
+    position: relative;
+    float: right;
+}
+
 td#column{
     width: 8%;
 }

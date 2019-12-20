@@ -6,67 +6,6 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/myjs.js"></script>
-                <script>
-                    var choice = "posled";
-
-                    $(document).ready(function(){
-                      $(".compute").click(function(){
-                        $.post("/rocket/parameters",
-                        {
-                          scheme : choice,
-                          H: $("#H").val(),
-                          mp: $("#mp").val(),
-                          s1: $("#s1").val(),
-                          s2: $("#s2").val(),
-                          w1: $("#w1").val(),
-                          w2: $("#w2").val(),
-                          a: $("#a").val(),
-                          w3: $("#w3").val(),
-                          s3: $("#s3").val()
-                        },
-                        function(data,status){
-                          var list = data.split(',');
-                          $("#mb1").text(list[0]);
-                          $("#mb2").text(list[1]);
-                          $("#mt1").text(list[2]);
-                          $("#mt2").text(list[3]);
-                          $("#mk1").text(list[4]);
-                          $("#mk2").text(list[5]);
-                          $("#m0").text(list[6]);
-                          $("#mb3").text(list[7]);
-                          $("#mt3").text(list[8]);
-                          $("#mk3").text(list[9]);
-                        });
-                      });
-                    });
-
-                    $(document).ready(function(){
-                        $("#choice1").click(function(){
-                            choice = "posled";
-                            $("#aInput").hide();
-                            $("#stup3req").hide();
-                            $("#stup3res").hide();
-                        });
-                        $("#choice2").click(function(){
-                            choice = "parallbezpereliva";
-                            $("#aInput").show();
-                            $("#stup3req").hide();
-                            $("#stup3res").hide();
-                        });
-                        $("#choice3").click(function(){
-                            choice = "parallspereliv";
-                            $("#aInput").show();
-                            $("#stup3req").hide();
-                            $("#stup3res").hide();
-                        });
-                        $("#choice4").click(function(){
-                            choice = "trehstuppaket";
-                            $("#aInput").show();
-                            $("#stup3req").show();
-                            $("#stup3res").show();
-                        });
-                    });
-                </script>
     <title>График</title>
 </head>
 <body>
@@ -126,13 +65,13 @@
                             <td></td>
                             <td></td>
                             <td>Конструктивная характеристика ракетных блоков третьей ступени, s3</td>
-                            <td id="column"><input type="text" id="s3" value="0"></td>
+                            <td id="column"><input type="text" id="s3" value="6"></td>
                             <td>Удельный импульс топлива и двигателя РБ третьей ступени, м/с</td>
-                            <td id="column"><input type="text" id="w3" value="0"></td>
+                            <td id="column"><input type="text" id="w3" value="2000"></td>
                         </tr>
                         <tr id="aInput" hidden="true">
                             <td>Отношение силы тяги</td>
-                            <td id="column"><input type="text" id="a" value="0"></td>
+                            <td id="column"><input type="text" id="a" value="0.7"></td>
                         </tr>
                     </table>
                 </form>
@@ -182,6 +121,49 @@
             <div class="slide slide5">
                 <h2>Графики</h2>
                 <hr><br>
+                <form>
+                                    <h3>Исходные параметры</h3>
+                                    <table>
+                                        <tr>
+                                            <td>Тяга двигателя первой ступени</td>
+                                            <td id="column"><input type="text" id="P1" value="2150"></td>
+                                            <td>Тяга двигателя второй ступени</td>
+                                            <td id="column"><input type="text" id="P2" value="371"></td>
+                                            <td>Тяга двигателя третьей ступени</td>
+                                            <td id="column"><input type="text" id="P3" value="100"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Время работы первой ступени</td>
+                                            <td id="column"><input type="text" id="t1" value="116"></td>
+                                            <td>Время работы второй ступени</td>
+                                            <td id="column"><input type="text" id="t2" value="105"></td>
+                                            <td>Время работы третьей ступени</td>
+                                            <td id="column"><input type="text" id="t3" value="90"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Диаметр первой ступени</td>
+                                            <td id="column"><input type="text" id="D1" value="2.6"></td>
+                                            <td>Диаметр второй ступени</td>
+                                            <td id="column"><input type="text" id="D2" value="2.2"></td>
+                                            <td>Диаметр третьей ступени</td>
+                                            <td id="column"><input type="text" id="D3" value="1.4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Конечный угол первой ступени</td>
+                                            <td id="column"><input type="text" id="fi1" value="40"></td>
+                                            <td>Конечный угол второй ступени</td>
+                                            <td id="column"><input type="text" id="fi2" value="10"></td>
+                                            <td>Конечный угол третьей ступени</td>
+                                            <td id="column"><input type="text" id="fi3" value="0"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Угол полураствора корпуса</td>
+                                            <td id="column"><input type="text" id="betta" value="19"></td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <a class="button graph" href="#" role="button">Построить</a>
+                                </form>
             </div>
 
             <a class="button slider_control_prev" href="#" role="button">Назад</a>
